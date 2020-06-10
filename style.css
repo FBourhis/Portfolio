@@ -11,6 +11,10 @@ a.nav-link{
     letter-spacing: 2px;
 }
 
+#myNav{
+    opacity: 1;
+}
+
 .pair{
     background-color: white;
     color: black;

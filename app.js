@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             navbar.style.backgroundColor = "rgb(37, 36, 36)";
             navbar.style.top = 0;
             navbar.style.opacity = 1;
+            navbar.style.zIndex = 20;
 
         }}
 
