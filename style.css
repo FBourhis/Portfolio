@@ -1,0 +1,35 @@
+body{
+    /*background-image: url("img/background.jpg");*/
+    background-color: rgb(37, 36, 36);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+a.nav-link{
+    color: rgb(90, 137, 219);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.pair{
+    background-color: white;
+    color: black;
+}
+
+.impair{
+    background-color: rgb(37, 36, 36);
+    color: white;
+}
+
+h1{
+    text-align: center;
+    color: rgb(90, 137, 219);
+}
+
+li{
+    font-size: large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
