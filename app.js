@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Remove "sticky" when you leave the scroll position
 
     function mySticky() {
-        // position du curseur au scroll
+        // cursor position
         var posCurseur = this.pageYOffset;
-        // je teste la différence de distance entre le scroll et nav
-        if (sticky - posCurseur < 1) {
-            navbar.style.position = "fixed";
+        // distance beetween scroll and nav
+        if (sticky - posCurseur < 50) {
+            navbar.style.position = "sticky";
+            navbar.style.backgroundColor = "rgb(37, 36, 36)";
             navbar.style.top = 0;
+            navbar.style.opacity = 1;
 
         }}
 
