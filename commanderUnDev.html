@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Commander Un Dev</title>
+</head>
+
+
+<body>
+
+    <section id="app" class="impair">
+        <h1 class="display-3 pb-5 pt-2">Rechercher et commander un dev</h1>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-5 pb-5">Compétences proposées</h1>
+                    <button v-for="langage in langages" v-on:click="demander(langage)" class="btn btn-warning m-4"> {{ langage }} </button>
+                </div>
+
+                <div class="col">
+                    <h1 class="display-5 pb-5" v-if="demandes.length > 0">Compétences demandées</h1>
+                    <button v-for="demande in demandes" v-if="demandeExiste(demande)" v-on:click="enlever(demande)" class="btn btn-success m-4"> {{ demande }} </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-primary btn-lg btn-block" v-on:click="rechercheDev()">Rechercher un développeur</button>
+            </div>
+
+            <div class="row">
+                <p id="devText" class="p-5" v-bind:style="affichageDev">Frédéric Bourhis</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            
+            data: {
+                langages: ["HTML", "CSS", "JS", "VueJS", "NodeJS", "Highcharts"],
+                demandes: [],
+                devTextSize: 0,
+                affichageDev: ""
+            },
+
+            methods: {
+                demander: function (langage) {
+                    for (i=0; i<this.demandes.length; i++){
+                        if (langage === this.demandes[i]){
+                            return 0;
+                        }
+                    }
+                    this.affichageDev = "font-size: 0em;"
+                    this.devTextSize = 0;
+                    this.demandes.push(langage);
+                },
+
+                enlever: function(langage){
+                    for (i=0; i<this.demandes.length; i++){
+                        if (langage === this.demandes[i]){
+                            this.affichageDev = "font-size: 0em;"
+                            this.devTextSize = 0;
+                            this.demandes.splice(i, 1);
+                        }
+                    } 
+                },
+
+                demandeExiste: function(langage){
+                    var existe = false;
+                    for (i=0; i<this.demandes.length; i++){
+                        if (langage === this.demandes[i]){
+                            return true;
+                        }
+                    } 
+                },
+
+                rechercheDev: function(){
+                    console.log("devTextSize = " + this.devTextSize);
+                    if (this.devTextSize < 8 ){
+                        this.devTextSize++;
+                    }
+                    this.affichageDev = "font-size: " + this.devTextSize + "em;"
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>

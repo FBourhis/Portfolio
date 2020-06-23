@@ -1,8 +1,15 @@
-body{
+body {
     /*background-image: url("img/background.jpg");*/
     background-color: rgb(37, 36, 36);
     background-attachment: fixed;
     background-repeat: no-repeat;
+    height: 100%;
+}
+
+#myNav{
+    opacity: 1;
+    background-color: rgb(37, 36, 36);
+    z-index: 20;
 }
 
 a.nav-link{
@@ -11,11 +18,23 @@ a.nav-link{
     letter-spacing: 2px;
 }
 
-#myNav{
-    opacity: 1;
+a:hover {
+    background-color: white;
+    color: black;
 }
 
-.pair{
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.pair {
     background-color: white;
     color: black;
 }
@@ -24,6 +43,7 @@ a.nav-link{
     background-color: rgb(37, 36, 36);
     color: white;
 }
+
 
 h1{
     text-align: center;
@@ -36,4 +56,8 @@ li{
     margin-bottom: 10px;
 }
 
+#devText{
+    font-size: 0em;
+    color: brown;
+}
 
